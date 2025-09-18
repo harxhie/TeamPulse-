@@ -227,7 +227,7 @@ const Dashboard = () => {
       alignItems: 'center',
     },
     
-   headerTitle: {
+headerTitle: {
   fontSize: '36px',
   fontWeight: 'bold',
   marginBottom: '8px',
@@ -237,17 +237,21 @@ const Dashboard = () => {
   WebkitTextFillColor: 'initial',
   backgroundClip: 'initial',
   // Then apply gradient
-  backgroundImage: darkMode 
-    ? 'linear-gradient(135deg, #c084fc, #a855f7)' 
+  // Remove duplicate background properties by merging/resetting:
+  backgroundImage: darkMode
+    ? 'linear-gradient(135deg, #c084fc, #a855f7)'
     : 'linear-gradient(135deg, #8b5cf6, #7c3aed)',
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   backgroundClip: 'text',
-  // Fallback color for browsers that don't support gradient text
   color: darkMode ? '#c084fc' : '#8b5cf6',
+
+  // Fallback color for browsers that don't support gradient text
+
   // Force repaint
   transform: 'translateZ(0)',
 },
+
 
     headerDate: {
       color: darkMode ? '#9ca3af' : '#6b7280',
